@@ -1,41 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon portfolio</title>
+    <title>Mes Passions | Béni Sky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --violet-doux: #6c63ff;
+            --violet-fonce: #534edd;
+            --orange-vif: #ffa726;
+            --gris-tres-fonce: #333;
+            --gris-fonce: #666;
+            --gris-tres-clair: #f8f8f8;
+            --gris-clair: #eee;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--gris-tres-clair);
+            font-family: 'Roboto', sans-serif;
+            color: var(--gris-tres-fonce);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: white;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        header .logo a { text-decoration: none; font-weight: 900; color: var(--violet-doux); font-size: 1.5rem; }
+
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul li a { text-decoration: none; color: var(--gris-tres-fonce); font-weight: 700; transition: 0.3s; }
+        nav ul li a.active { color: var(--violet-doux); border-bottom: 3px solid var(--violet-doux); }
+
+        .passions-container { padding: 6rem 10%; max-width: 1300px; margin: 0 auto; }
+
+        .section-intro { text-align: center; margin-bottom: 8rem; }
+        .tagline { color: var(--orange-vif); text-transform: uppercase; letter-spacing: 4px; font-weight: 700; font-size: 0.8rem; }
+        .section-intro h2 { font-size: 3.5rem; color: var(--violet-fonce); font-weight: 900; margin-top: 10px; }
+
+        .passion-item { display: flex; align-items: center; gap: 60px; margin-bottom: 12rem; }
+        .passion-item.reverse { flex-direction: row-reverse; }
+
+        .passion-visual { flex: 1.2; }
+        .img-wrapper { 
+            background: white; padding: 12px; border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+        }
+
+        .img-wrapper img {
+            width: 100%; height: 450px; object-fit: cover; border-radius: 12px;
+            display: block; transition: 0.6s ease;
+            background-color: var(--gris-clair); /* Couleur de secours pendant le chargement */
+        }
+
+        .passion-text { flex: 1; position: relative; }
+        .number {
+            font-size: 8rem; font-weight: 900; color: var(--gris-clair);
+            position: absolute; top: -80px; left: -20px; z-index: -1; opacity: 0.7;
+        }
+
+        .passion-item.reverse .number { left: auto; right: -20px; }
+
+        .passion-text h3 { font-size: 2.5rem; color: var(--gris-tres-fonce); margin-bottom: 20px; font-weight: 900; }
+        .passion-text p { font-size: 1.1rem; color: var(--gris-fonce); line-height: 1.8; }
+        .passion-line { width: 50px; height: 5px; background: var(--violet-doux); margin-top: 25px; border-radius: 10px; transition: 0.4s; }
+
+        .passion-item:hover .img-wrapper img { transform: scale(1.03); }
+        .passion-item:hover .passion-line { width: 100px; background: var(--orange-vif); }
+
+        footer { background: var(--violet-doux); padding: 3rem; text-align: center; color: white; margin-top: 4rem; }
+        
+        @media (max-width: 900px) {
+            .passion-item, .passion-item.reverse { flex-direction: column; text-align: center; gap: 40px; }
+            .img-wrapper img { height: 300px; }
+            .passion-line { margin: 25px auto; }
+            .number { display: none; }
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <div>
-           <a href="">Mon portfolio</a>
-           <link rel="stylesheet" href="CSS/style.css">
-           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-           <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        </div>
+        <div class="logo"><a href="index.html">Béni Sky</a></div>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="Projets.htm">Projets</a></li>
-                <li><a href="Passions.html"class="active">Passions</a></li>
+                <li><a href="Projets.html">Projets</a></li>
+                <li><a href="Passions.html" class="active">Passions</a></li>
                 <li><a href="Divertissement.html">Divertissement</a></li>
                 <li><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h1> voici mes Passions</h1>
-     </main>
-  <footer>
-    <p>© 2026 Béni Sky. Tous droits réservés.</p>
-    <div>
-      <a href=""><i class="fa-brands fa-github"></i></a>
-      <a href=""><i class="fa-brands fa-linkedin"></i></a>
-      <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-    </div>
-  </footer>
+
+    <main class="passions-container">
+        <div class="section-intro">
+            <span class="tagline">Lifestyle & Inspiration</span>
+            <h2>Mes Passions</h2>
+        </div>
+
+        <div class="passions-list">
+            <article class="passion-item">
+                <div class="passion-visual">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop" alt="Gaming">
+                    </div>
+                </div>
+                <div class="passion-text">
+                    <span class="number">01</span>
+                    <h3>Gaming & Tech</h3>
+                    <p>L'exploration d'univers virtuels nourrit ma créativité technique et ma passion pour les interfaces fluides.</p>
+                    <div class="passion-line"></div>
+                </div>
+            </article>
+
+            <article class="passion-item reverse">
+                <div class="passion-visual">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop" alt="Musique">
+                    </div>
+                </div>
+                <div class="passion-text">
+                    <span class="number">02</span>
+                    <h3>Musique</h3>
+                    <p>La musique est le moteur de ma concentration. Elle m'aide à rythmer mes sessions de code les plus intenses.</p>
+                    <div class="passion-line"></div>
+                </div>
+            </article>
+
+            <article class="passion-item">
+                <div class="passion-visual">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1000&auto=format&fit=crop" alt="Voyage">
+                    </div>
+                </div>
+                <div class="passion-text">
+                    <span class="number">03</span>
+                    <h3>Voyage</h3>
+                    <p>Découvrir de nouvelles cultures est essentiel pour garder un esprit ouvert et une vision globale du design.</p>
+                    <div class="passion-line"></div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Béni Sky. Tous droits réservés.</p>
+    </footer>
+
 </body>
 </html>

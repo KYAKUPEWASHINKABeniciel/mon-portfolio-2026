@@ -13,7 +13,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: var(--gris-tres-claire);
+    background-color: var(--gris-tres-clair);
     font-family: roboto, sans-serif;
     line-height:1.6;
 }
@@ -229,233 +229,446 @@ footer a:hover {
     transform: translateY(-3px);
 }
 
-/* --- STYLES PAGE CONTACT --- */
-
-.contact-main {
-    padding: 4rem 2rem;
-    display: flex;
-    justify-content: center;
+:root {
+    --violet-doux: #6c63ff;
+    --violet-fonce: #534edd;
+    --orange-vif: #ffa726;
+    --gris-tres-fonce: #1a1a1a;
+    --gris-fonce: #666;
+    --gris-tres-clair: #f8f8f8;
+    --white: #ffffff;
 }
 
-.contact-container {
-    display: flex;
-    gap: 4rem;
-    max-width: 1000px;
-    width: 100%;
-    align-items: flex-start;
+/* --- SECTION PRINCIPALE --- */
+.portfolio-zenith {
+    position: relative;
+    padding: 8rem 5% 12rem;
+    background-color: var(--gris-tres-clair);
+    overflow: hidden;
 }
 
-.contact-info {
-    flex: 1;
+.bg-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 0%, rgba(108, 99, 255, 0.04) 0%, transparent 70%);
+    pointer-events: none;
 }
 
-.contact-info h2 {
-    text-align: left; /* Aligné à gauche pour cette section */
+.zenith-header {
+    margin-bottom: 10rem;
+    text-align: center;
 }
 
-.contact-info h2::after {
-    margin: 1rem 0; /* Aligne la barre violette à gauche */
-}
-
-.contact-info p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--gris-tres-fonce);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-info i {
-    color: var(--violet-doux);
-}
-
-.direct-links {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.direct-links a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: transform 0.2s;
-}
-
-.btn-wa { background-color: #25D366; }
-.btn-tg { background-color: #0088cc; }
-
-.direct-links a:hover {
-    transform: translateY(-3px);
-    opacity: 0.9;
-}
-
-.contact-form-box {
-    flex: 1;
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.input-group {
-    margin-bottom: 1.5rem;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--gris-tres-fonce);
-}
-
-.input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--gris-clair);
-    border-radius: 8px;
-    outline: none;
-    font-family: inherit;
-}
-
-.input-group input:focus {
-    border-color: var(--violet-doux);
-}
-
-.send-btn {
-    width: 100%;
-    background-color: var(--violet-doux);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+.reveal-text {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--orange-vif);
     font-weight: 700;
-    cursor: pointer;
-    transition: background 0.3s;
 }
 
-.send-btn:hover {
-    background-color: var(--violet-fonce);
+.main-title {
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--gris-tres-fonce);
+    margin-top: 1.5rem;
 }
 
-/* Responsive pour tablettes et mobiles */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .direct-links {
-        flex-wrap: wrap;
-    }
+.main-title span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--violet-doux);
 }
 
-/* --- SECTION RÉALISATIONS (PROJETS) --- */
-
-.realisations {
-    padding: 4rem 2rem;
-    max-width: 1200px;
+/* --- GRILLE DE LUXE --- */
+.grid-luxury {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 8rem 4rem;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Grille des cartes */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
-
-/* Style de chaque carte individuelle */
-.card {
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden; /* Pour que l'image ne dépasse pas des bords arrondis */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.luxury-card {
+    position: relative;
+    height: 450px;
     display: flex;
-    flex-direction: column;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Image du projet */
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Recadre l'image proprement */
-    border-bottom: 3px solid var(--violet-doux);
-}
-
-/* Contenu textuel de la carte */
-.card h3 {
-    padding: 1.5rem 1.5rem 0.5rem;
-    color: var(--violet-fonce);
-    font-size: 1.4rem;
-}
-
-.card p {
-    padding: 0 1.5rem;
-    color: var(--gris-fonce);
-    font-size: 1rem;
-    flex-grow: 1; /* Pousse le reste vers le bas */
-}
-
-/* Tags (langages utilisés) */
-.tags {
-    display: block;
-    padding: 1rem 1.5rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--violet-doux);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Liens Code/Démo en bas de carte */
-.icons {
-    background-color: var(--gris-tres-clair);
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    transition: all 0.6s ease;
 }
 
-.icons a {
+/* Boîte en verre (Texte) */
+.card-glass {
+    width: 75%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 3.5rem;
+    z-index: 2;
+    border-left: 5px solid var(--violet-doux);
+    box-shadow: 25px 25px 50px rgba(0,0,0,0.04);
+    transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* Image en arrière-plan */
+.card-preview {
+    position: absolute;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    filter: grayscale(1) contrast(1.1);
+    transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    border-radius: 4px;
+}
+
+.card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.8s;
+}
+
+/* --- ÉLÉMENTS INTERNES --- */
+.number {
+    font-family: serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--orange-vif);
+    margin-right: 1rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--gris-fonce);
+}
+
+.card-content h3 {
+    font-size: 2.2rem;
+    color: var(--gris-tres-fonce);
+    margin: 1.5rem 0;
+    font-weight: 800;
+}
+
+.card-content p {
+    color: var(--gris-fonce);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+.project-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.btn-minimal {
     text-decoration: none;
     color: var(--gris-tres-fonce);
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-}
-
-.icons a:hover {
-    color: var(--violet-doux);
-}
-
-.icons span {
+    font-weight: 800;
     font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--violet-doux);
+    padding-bottom: 4px;
+    transition: 0.3s;
+}
+
+.btn-minimal:hover {
+    color: var(--violet-doux);
+    border-bottom-color: var(--orange-vif);
+}
+
+.status {
     color: var(--gris-fonce);
     font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* --- ANIMATIONS AU HOVER --- */
+.luxury-card:hover .card-preview {
+    filter: grayscale(0);
+    width: 70%;
+    box-shadow: 0 30px 60px rgba(108, 99, 255, 0.2);
+}
+
+.luxury-card:hover .card-glass {
+    transform: translateX(-30px);
+    background: var(--white);
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 600px) {
-    .cards {
-        grid-template-columns: 1fr; /* Une seule colonne sur petit mobile */
-    }
-    
-    .realisations h2 {
-        font-size: 2rem;
-    }
+@media (max-width: 1100px) {
+    .grid-luxury { grid-template-columns: 1fr; gap: 6rem; }
+    .luxury-card { height: auto; flex-direction: column; align-items: flex-start; }
+    .card-glass { width: 100%; padding: 2rem; }
+    .card-preview { position: relative; width: 100%; height: 250px; margin-top: -2rem; z-index: 3; filter: grayscale(0); }
+}
+
+/* --- STYLE DES IMAGES DANS LE VISUEL --- */
+.img-wrapper img {
+    width: 100%;
+    /* On fixe une hauteur commune pour toutes les images pour l'harmonie */
+    height: 480px; 
+    /* C'EST LA PROPRIÉTÉ MAGIQUE : l'image remplit le cadre sans se déformer */
+    object-fit: cover; 
+    border-radius: 12px;
+    display: block;
+    /* Transition douce pour l'effet de zoom au survol */
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* L'effet de zoom au survol de la carte */
+.passion-item:hover .img-wrapper img {
+    transform: scale(1.05);
+}:root {
+    --violet-doux: #6c63ff;
+    --violet-fonce: #534edd;
+    --orange-vif: #ffa726;
+    --gris-tres-fonce: #0a0a0a; /* Noir presque pur pour le fond */
+    --gris-fonce: #888;
+    --gris-tres-clair: #f4f4f4;
+    --white: #ffffff;
+    --card-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* --- SECTION PRINCIPALE --- */
+.gallery-elite {
+    position: relative;
+    padding: 12rem 5%;
+    background-color: var(--gris-tres-fonce); /* Fond noir profond pour le luxe */
+    color: var(--white);
+    overflow: hidden;
+}
+
+.elite-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 10% 10%, rgba(108, 99, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(255, 167, 38, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.gallery-header {
+    margin-bottom: 12rem;
+    text-align: left; /* Aligné à gauche pour un look plus pro et éditorial */
+    max-width: 800px;
+}
+
+.elite-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--orange-vif);
+    font-weight: 700;
+}
+
+.elite-title {
+    font-size: clamp(3.5rem, 12vw, 8rem); /* Titre géant adaptatif */
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--white);
+    margin-top: 1rem;
+    letter-spacing: -4px;
+}
+
+.elite-title span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.3); /* Contour blanc très fin */
+    transition: 0.5s ease;
+}
+
+.gallery-elite:hover .elite-title span {
+    -webkit-text-stroke-color: var(--violet-doux); /* S'illumine au survol de la section */
+}
+
+/* --- GRILLE ÉLITE --- */
+.elite-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 6rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* --- STYLE DE LA CARTE KINÉTIQUE --- */
+.elite-card {
+    position: relative;
+    height: 550px; /* Plus haute pour plus d'impact */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Visuel de fond */
+.card-visual {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    filter: grayscale(1); /* Par défaut en Noir et Blanc */
+    transition: 0.8s ease;
+}
+
+.card-visual img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transform: scale(1.1); /* LÉGER ZOOM pour l'effet de parallaxe au hover */
+    transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.95) 80%);
+    transition: 0.5s;
+}
+
+/* Conteneur de l'info (Texte) qui flotte au-dessus */
+.card-info-wrapper {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    padding: 3rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transform: translateY(30px); /* Poussé vers le bas par défaut */
+    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Meta Data (Numéro + Tag) */
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.number {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--orange-vif);
+    font-family: serif; font-style: italic;
+}
+
+.tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 700;
+}
+
+/* Body (Titre + Descr) */
+.card-body h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.card-body p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    max-width: 90%;
+    margin-bottom: 2rem;
+    opacity: 0; /* Caché par défaut */
+    transition: 0.5s ease 0.1s; /* Léger délai */
+}
+
+/* Actions (Boutons) */
+.card-actions {
+    display: flex;
+    gap: 1.5rem;
+    opacity: 0; /* Caché par défaut */
+    transition: 0.5s ease 0.2s; /* Plus de délai */
+}
+
+.btn-elite {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    background-color: var(--white);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex; align-items: center; gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-elite.secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-elite:hover {
+    background-color: var(--violet-doux);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+}
+
+.btn-elite.secondary:hover {
+    border-color: var(--orange-vif);
+    color: var(--orange-vif);
+    background-color: transparent;
+}
+
+.status-elite {
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* --- ANIMATIONS AU HOVER DE LA CARTE --- */
+.elite-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--card-shadow);
+}
+
+.elite-card:hover .card-visual {
+    filter: grayscale(0); /* Passe à la couleur */
+}
+
+.elite-card:hover .card-visual img {
+    transform: scale(1); /* L'image « recule » (effet de profondeur) */
+}
+
+.elite-card:hover .image-overlay {
+    background: linear-gradient(to bottom, rgba(108,99,255,0.1) 0%, rgba(10,10,10,1) 90%);
+}
+
+.elite-card:hover .card-info-wrapper {
+    transform: translateY(0); /* Le texte remonte */
+}
+
+.elite-card:hover .card-body p,
+.elite-card:hover .card-actions {
+    opacity: 1; /* Révèle la description et les boutons */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1000px) {
+    .elite-grid { grid-template-columns: 1fr; gap: 4rem; }
+    .card-info-wrapper { padding: 2rem; }
+    .card-body h3 { font-size: 2rem; }
+    .card-body p, .card-actions { opacity: 1; } /* Toujours visible sur mobile */
+    .card-info-wrapper { transform: translateY(0); }
+    .card-visual { filter: grayscale(0); }
 }
